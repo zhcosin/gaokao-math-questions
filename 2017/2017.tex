@@ -35,6 +35,29 @@
 \section{江苏卷}
 \label{sec:jiangshu}
 
+\begin{exercise}(第19题)
+  对于给定的正整数$k$，若数列$\{a_n\}$满足$a_{n-k}+a_{n-k+1}+\cdots+a_{n-1}+a_{n+1}+\cdots+a_{n+k-1}+a_{n+k}=2ka_n$对任意正整数$n(n>k)$总成立，则称数列$\{a_n\}$是“P(k)数列”，
+  \begin{enumerate}
+  \item 证明: 等差数列$\{a_n\}$是“$P(k)$数列”.
+  \item 若数列$\{a_n\}$既是“$P(2)$数列”，又是“$P(3)$数列”，证明: $\{a_n\}$是等差数列.
+  \end{enumerate}
+\end{exercise}
+
+\begin{proof}[\textbf{证明}] (北京-陈云恒, 2017-06-08)
+
+  (1). 略.
+  (2). 由
+  \[ a_{n-3}+a_{n-2}+a_{n-1}+a_{n+1}+a_{n_+2}+a_{n+3}=6a_n \]
+  及以下两式
+  \begin{eqnarray*}
+    a_{n-3}+a_{n-2}+a_n+a_{n+1} & = &4a_{n-1} \\
+    a_{n-1}+a_n+a_{n+2}+a_{n+3} & = &4a_{n+1} 
+  \end{eqnarray*}
+  这两式相加后减去最前面一式即得
+  \[ a_{n_1}+a_{n+1}=2a_n \]
+  即为等差数列.
+\end{proof}
+
 \section{天津卷}
 \label{sec:tianjin}
 
