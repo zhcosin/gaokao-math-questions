@@ -119,18 +119,14 @@
   得
   \[ x_n > 2x_{n+1}-\frac{x_{n+1}^2}{2} \]
   由于$x_{n+1}<1$，所以解得
-  \[ x_{n+1} < \frac{x_n}{1+\sqrt{1-\frac{x_n}{2}}} \]
-  而欲证式即为
-  \[ x_{n+1} \leqslant \frac{x_n}{2-\frac{x_n}{2}} \]
-  所以只需证明
-  \[ 1+\sqrt{1-\frac{x_n}{2}} \geqslant 2-\frac{x_n}{2} \]
-  即要证明
-  \[ \frac{x_n}{2} + \sqrt{1-\frac{x_n}{2}} \geqslant 1 \ \]
-  而
-  \[ \frac{x_n}{2} + \sqrt{1-\frac{x_n}{2}} \geqslant \frac{x_n}{2} + \left( 1-\frac{x_n}{2} \right) = 1 \]
-  得证.
-
-  (3). 由熟知的不等式$\ln{(1+x)}<x$对任意$x>-1$成立，所以得到$x_n<2x_{n+1}$，于是不等式左边便得证，至于右边，利用第二问结论可得
+  \[ x_{n+1} < 2-\sqrt{4-2x_n} = \frac{x_n}{1+\sqrt{1-\frac{x_n}{2}}} \]
+  而显然
+  \[ \sqrt{1-\frac{x_n}{2}} > 1-\frac{x_n}{2} \]
+  所以
+  \[ x_{n+1} < \frac{x_n}{2-\frac{x_n}{2}} \]
+  即
+  \[ 2x_{n+1}-x_n \leqslant \frac{x_nx_{n+1}}{2} \]
+   (3). 由熟知的不等式$\ln{(1+x)}<x$对任意$x>-1$成立，所以得到$x_n<2x_{n+1}$，于是不等式左边便得证，至于右边，利用第二问结论可得
   \[ \frac{1}{2^nx_n}-\frac{1}{2^{n+1}x_{n+1}} \leqslant \frac{1}{2^{n+2}} \]
   于是
   \[ \frac{1}{2x_1} - \frac{1}{2^nx_n} = \sum_{k=1}^{n-1} \left( \frac{1}{2^kx_k}-\frac{1}{2^{k+1}x_{k+1}} \right) \leqslant \sum_{k=1}^{n-1}\frac{1}{2^{k+2}}=\frac{1}{4}-\frac{1}{2^{n+1}} \]
