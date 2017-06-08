@@ -49,6 +49,31 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{proof}[\textbf{证明}](北京-陈云恒, 2017-06-08)
+  
+  (1). 略.
+
+  (2). 由
+  
+  \[ \ln{(1+x)} \geqslant x-\frac{x^2}{2} \]
+  推得
+  \[ x_n=x_{n+1}+\ln{(1+x_{n+1})} \geqslant 2x_{n+1}-\frac{x_{n+1}^2}{2} \]
+  即
+   \[ 2x_{n+1}-x_n \leqslant \frac{x_{n+1}^2}{2} \leqslant \frac{x_nx_{n+1}}{2} \]
+
+   (3). 由第(2)问结果得
+   \[ 2 \left( \frac{1}{x_n}-\frac{1}{2} \right) \leqslant \frac{1}{x_{n+1}}- \frac{1}{2} \]
+   从而
+   \[ \frac{1}{x_n}-\frac{1}{2} \geqslant 2^{n-1} \left( \frac{1}{x_1}-\frac{1}{2} \right) \]
+   得
+   \[ x_n \leqslant \frac{1}{2^{n-2}} \]
+   又
+   \[ x_n=x_{n+1}+\ln{(1+x_{n+1})} \leqslant 2x_{n+1} \]
+   即
+   \[ x_n \geqslant \frac{x_{n-1}}{2} \geqslant \cdots \geqslant \frac{x_1}{2^{n-1}} = \frac{1}{2^{n-1}} \]
+   综上，结论得证。
+\end{proof}
+
 \begin{proof}[\textbf{证明}] (zhcosin, 2017-06-08)
 
   (1). 设函数$f(x)=x+\ln{(1+x)}$，求导可知其在$(-1,+\infty)$上递增，且$f(0)=0$，所以如果函数值为正，则自变量也为正，因此由数学归纳法，在$x_n>0$的假设下，便可得出$x_{n+1}>0$，而$x_1=1$，故可知这是一个正项数列，又由$x_{n+1}>0$知$x_n=x_{n+1}+\ln{(1+x_n)}>x_{n+1}$，即数列递减。
