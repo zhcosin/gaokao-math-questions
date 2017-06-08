@@ -137,6 +137,78 @@
 \section{山东卷}
 \label{sec:shandong}
 
+\section{试题研究}
+\label{sec:problem-study}
+
+\subsection{江苏卷数列题目结论的推广}
+\label{sec:jiangshu-series-extend}
+
+\textbf{作者}: 成都-zhcosin
+
+江苏卷的$P(k)$数列题目的结论可以推广为，设$r$和$s$是两个不同的正整数，且都大于1，若某数列既是$P(r)$数列又是$P(s)$数列，则它一定是等差数列。
+
+下面的证明过程中有一个引理暂未能得到定理，如果有谁证明了它，请告诉我一下(QQ:532319166).
+
+\begin{proof}[\textbf{证明}]
+  设数列是$P(m)$数列，则有递推公式
+  \[ a_{n-m}+a_{n-m+1}+\cdots+a_{n-1}-2ma_n+a_{n+1}+\cdots+a_{n-m+1}+a_{n+m}=0 \]
+  这是齐次线性递推数列，其特征方程是
+  \[ 1+x+\cdots+x^{m-1}-2mx^m+x^{m+1}+\cdots+x^{2m}=0 \]
+  为了得到它的通项表示，讨论它的根的情况，记
+    \[ f(x)= 1+x+\cdots+x^{m-1}-2mx^m+x^{m+1}+\cdots+x^{2m}\]
+  因为$f(1)=f'(1)=0$，所以$x=1$是它的二重根。设它的其它复数根分别为$t_i(i=2,2,\cdots,q)$，则通项可表为
+  \[ a_n=c_0+c_1 n + \sum_{i=2}^q p_i(n)t_i^n \]
+  其中的系数$c_0,c_1$为复常数，$p_i(n)$是一些关于$n$的多项式。
+
+  如果数列同时是$P(r)$数列和$P(s)$数列，那么数列的通项将有两种上述表达式，要证明它是等差数列，我们只要证明如下的另一个引理:
+  \begin{lemma}
+    设$t_1,t_2,\cdots,t_m$是$m$个非零且互不相等的复常数，而$p_i(x)(i=1,2,\cdots,m)$一些关于$x$的多项式，如果等式$p_1(n)t_1^n+p_2(n)t_2^n+\cdots+p_m(n)t_m^n=0$对一切正整数$n$都成立，则$p_i(x)(i=1,2,\ldots,n)$全是零多项式。
+  \end{lemma}
+  证明如下:
+
+  由条件知有如下等式
+  \begin{equation*}
+    \begin{pmatrix}
+      t_1 & t_2 & \cdots & t_m \\
+      t_1^2 & t_2^2 & \cdots & t_{m^2} \\
+      \cdots \\
+      t_1^r & t_2^r & \cdots & t_m^r
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+      p_1(1) & p_1(2) & \cdots & p_1(r) \\
+      p_2(1) & p_2(2) & \cdots & p_2(r) \\
+      \cdots \\
+      p_m(1) & p_m(2) & \cdots & p_m(r)
+    \end{pmatrix}
+    = O
+  \end{equation*}
+  上式中$r$可以一直写到任意正整数，由上式便知，$p_i(k)(i=1,2,\ldots,m)$是下面齐次线性方程的解
+  \begin{equation*}
+    \left\{
+        \begin{array}{l}
+         p_1(k)t_1+p_2(k)t_2+\cdots+p_m(k)t_m=0 \\
+         p_1(k)t_1^2+p_2(k)t_2^2+\cdots+p_m(k)t_m^2=0 \\
+          \cdots \\
+         p_1(k)t_1^r+p_2(k)t_2^r+\cdots+p_m(k)t_m^r=0 \\
+        \end{array}
+        \right.
+  \end{equation*}
+  其中$k=1,2,\ldots$，取$r=m$时，方程个数与未知数个数相同，由范德蒙行列式可得
+  \begin{equation*}
+    \begin{vmatrix}
+      t_1 & t_2 & \cdots & t_m \\
+      t_1^2 & t_2^2 & \cdots & t_{m^2} \\
+      \cdots \\
+      t_1^m & t_2^m & \cdots & t_m^m
+    \end{vmatrix}
+    = t_1t_2\cdots t_m \prod_{1 \leqslant i < j \leqslant m}(t_i-t_j) \neq 0
+  \end{equation*}
+  因此方程的系数行列式非零，故上述方程只有零解，即
+  \[ p_1(k)=0, p_2(k)=0, \cdots, p_m(k)=0 \]
+  而$k$又是任意的正整数，所以$p_i(x)(i=1,2,\ldots,m)$只能全是零多项式。于是得证.
+\end{proof}
+
 \end{document}
 
 %%% Local Variables:
