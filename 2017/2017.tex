@@ -23,6 +23,57 @@
 \section{全国II卷}
 \label{sec:nation-2}
 
+\begin{exercise}(理科第12题)
+  已知$\triangle ABC$是边长为2的正三角形，$P$为平面$ABC$内一点，则$\vv{PA} \cdot (\vv{PB}+\vv{PC})$的最小值是(    )
+
+  (A). -2             (B). $-\frac{3}{2}$          (C). $-\frac{4}{3}$        (D). -1
+\end{exercise}
+
+\begin{figure}[htbp]
+  \centering
+\includegraphics{pic/nation-2-like-12.pdf}
+\caption{}
+\label{fig:nation-2-like-12}
+\end{figure}
+
+\begin{proof}[\textbf{解答}](成都-zhcosin, 2017-06-09)
+
+  如\autoref{fig:nation-2-like-12}，取$BC$边中点为$D$，则$\vv{PB}+\vv{PC}=2\vv{PD}$，于是原式即为$2\vv{PA}\cdot \vv{PD}=PA^2+PD^2-AD^2 \geqslant \frac{1}{2}(PA+PD)^2 - AD^2 \geqslant \frac{1}{2}AD^2 -  AD^2 = - \frac{1}{2} AD^2 = -\frac{3}{2}$.
+\end{proof}
+
+\begin{proof}[\textbf{解答}](数海拾贝微信公众号, 2017-06-08)
+
+  取$BC$边中点$D$，再取$AD$中点$E$，则$\vv{PB}+\vv{PC}=2\vv{PD}=2(\vv{PE}+\vv{ED})$，而$\vv{PA}=\vv{PE}+\vv{EA}$，所以
+  \begin{eqnarray*}
+    \vv{PA} \cdot (\vv{PB}+\vv{PC}) & = & 2(\vv{PE}+\vv{EA}) \cdot (\vv{PE}+\vv{ED}) \\
+                                    & = & 2[\vv{PE}^2+\vv{PE}(\vv{EA}+\vv{ED})+\vv{EA} \cdot \vv{ED}] \\
+                                    & = & 2(\vv{PE}^2 + \vv{EA} \cdot \vv {ED}) \\
+    & \geqslant & 2 \vv{EA} \cdot \vv{ED} =  - \frac{3}{2}
+  \end{eqnarray*}
+\end{proof}
+
+\begin{proof}[\textbf{解答}](成都-zhcosin, 2017-06-09)
+
+  把所有向量都用$\vv{AB}$和$\vv{AC}$来表示，设$\vv{PA}=x\vv{AB}+y\vv{AC}$，则$\vv{PB}=\vv{PA}+\vv{AB}=(1+x)\vv{AB}+y\vv{AC}$，$\vv{PC}=\vv{PA}+\vv{AC}=x\vv{AB}+(1+y)\vv{AC}$，于是
+  \begin{eqnarray*}
+    \vv{PA} \cdot (\vv{PB}+\vv{PC}) & = & (x\vv{AB}+y\vv{AC}) \cdot ((1+2x)\vv{AB}+(1+2y)\vv{AC}) \\
+                                    & = & x(1+2x)\vv{AB}^2+y(1+2y)\vv{AC}^2+(x+y+4xy)(\vv{AB} \cdot \vv{AC}) \\
+                                    & = & 4x(1+2x)+4y(1+2y)+2(x+y+4xy) \\
+    & = & 8x^2+8y^2+8xy+6x+6y
+  \end{eqnarray*}
+  为求此式最小值，作代换
+  \[ x=u+v, \  y=u-v \]
+  于是上式成为
+  \begin{eqnarray*}
+    & & 8(u+v)^2+8(u-v)^2+8(u+v)(u-v)+12u \\
+    & = & 24u^2+12u+8v^2 \\
+    & \geqslant & 24u^2+12u \\
+    & = & 24 \left( u+\frac{1}{4} \right)^2-\frac{3}{2} \geqslant -\frac{3}{2}
+  \end{eqnarray*}
+\end{proof}
+
+
+
 \section{全国III卷}
 \label{sec:nation-3}
 
