@@ -83,6 +83,14 @@
   \end{eqnarray*}
 \end{proof}
 
+\begin{exercise}(理科第21题)
+  已知函数$f(x)=ax^2-ax-x\ln{x}$，且$f(x) \geqslant 0$.
+  \begin{enumerate}
+  \item 求$a$;
+  \item 证明: $f(x)$存在唯一的极大值点$x_0$，且$e^{-2}<f(x_0)<2^{-2}$.
+  \end{enumerate}
+\end{exercise}
+
 \section{全国III卷}
 \label{sec:nation-3}
 
@@ -215,6 +223,58 @@
 
 \section{山东卷}
 \label{sec:shandong}
+
+\newpage
+
+\section{关于全国III卷压轴题的讨论}
+\label{sec:discussion-about-nation-3-infty-product}
+
+\textbf{作者}: 成都-zhcosin, 2017-06-10
+
+全国III卷的压轴题并不难，我所感兴趣的是那个无穷乘积
+\[ \prod_{n=1}^{\infty}\left( 1+\frac{1}{2^n} \right) \]
+本来试图求出这个无穷乘积来，但是没有成功，只表成了另一个无穷级数的和。
+
+对这无穷乘积取对数，便得级数
+\[ \sum_{n=1}^{\infty} \left( 1+\frac{1}{2^n} \right) \]
+由$\ln(1+x)<x$及级数$\sum_{n=1}^{\infty} \frac{1}{2^n}$收敛，知上面这个级数也收敛，从而前面的无穷乘积也收敛。
+
+首先根据函数$\ln{(1+x)}$的泰勒级数
+\[ \ln{(1+x)} = x-\frac{x^2}{2}+\frac{x^3}{3}+\cdots + (-1)^{n-1} \frac{x^n}{n}  + \cdots \]
+记
+\[ T_n(x) = \sum_{k=1}^n (-1)^{k-1}\frac{x^k}{k} \]
+则有如下结论:
+\begin{statement}
+  当$n$为奇数时, $\ln{(1+x)} < T_n(x)$，而$n$为偶数时, $\ln{(1+x)}>T_n(x)$.
+\end{statement}
+实际上由拉格朗日余项的符号便可立得此结论，但此利用导数证明一下(也就是不超出高中知识范围).
+\begin{proof}[\textbf{证明}]
+  对$T_n(x)$求导得
+  \[ T_n'(x) = 1-x+x^2-\cdots + (-x)^{n-1} = \frac{1-(-x)^n}{1+x} \]
+  记
+  \[ R_n(x) = \ln{(1+x)}-T_n(x) \]
+  则
+  \[ R_n'(x) = \frac{1}{1+x} - \frac{1-(-x)^n}{1+x} = \frac{(-x)^n}{1+x} \]
+  而$R_n(0)=0$，所以当$n$为奇数时，$R_n(x)$在正实数区间上单调增加，而$n$为偶数时则为单调递减，故得结论。
+\end{proof}
+
+于是得如下逼近式(式中$r$和$s$是任意两个正整数)
+\[ T_{2r}(x) < \ln{(1+x)} < T_{2s+1}(x) \]
+取$x=\frac{1}{2^u}$，得
+\[ \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^u)^k} < \ln{\left( 1+\frac{1}{2^u} \right) < \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^u)^k}} \]
+再对$u=1,2,\ldots,n$进行累加得
+\[ \sum_{u=1}^n \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^u)^k} < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right) < \sum_{u=1}^{n} \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^u)^k}} \]
+两边的二重求和交换求和顺序，得
+\[  \sum_{k=1}^{2r} \sum_{u=1}^n (-1)^k \frac{1}{k(2^k)^u} < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right) <  \sum_{k=1}^{2s+1} \sum_{u=1}^{n}(-1)^k \frac{1}{k(2^k)^u}} \]
+即
+\[ \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^k-1)} \left( 1-\frac{1}{2^{nk}} \right) < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right)} < \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^k-1)} \left( 1-\frac{1}{2^{nk}} \right)\]
+令$n\to\infty$取极限，得
+\[ \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^k-1)} \leqslant \sum_{u=1}^{\infty} \ln{\left( 1+\frac{1}{2^u} \right)} \leqslant \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^k-1)} \]
+而级数
+\[ \sum_{n=1}^{\infty} (-1)^n \frac{1}{n(2^n-1)} \]
+显然是收敛的，因此在前式中两侧，分别令$r \to \infty$和$s \to \infty$便得
+\[ \sum_{u=1}^{\infty} \ln{\left( 1+\frac{1}{2^u} \right)} = \sum_{k=1}^{\infty} (-1)^k \frac{1}{k(2^k-1)} \]
+不知这个级数的和是否有简单表示。
 
 \end{document}
 
