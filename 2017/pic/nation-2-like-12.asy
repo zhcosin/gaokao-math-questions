@@ -24,7 +24,3 @@ label("$D$", D, S);
 draw(A -- D, dashed);
 draw(P -- D, dashed);
 
-pair E = interp(A, D, 0.5);
-label("$E$", E, (1, 0));
-
-draw(P -- E, dashed);
