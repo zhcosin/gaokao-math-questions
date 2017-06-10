@@ -285,6 +285,51 @@
 所以前式右边的累级数是绝对收敛的，于是可以交换求和顺序，所以
 \[ \sum_{n=1}^{\infty} \ln{\left( 1+\frac{1}{2^n} \right)} =  \sum_{m=1}^{\infty} \sum_{n=1}^{\infty}(-1)^{m-1} \frac{1}{m2^{nm}} = \sum_{m=1}^{\infty} (-1)^{m-1}\frac{1}{m(2^m-1)} \]
 
+\section{关于江苏卷数列题目的讨论}
+\label{sec:jiangshu-series-extend}
+
+\textbf{作者}: 成都-zhcosin, 2017-06-10
+
+  设数列是$P(m)$数列，则有递推公式
+  \[ a_{n-m}+a_{n-m+1}+\cdots+a_{n-1}-2ma_n+a_{n+1}+\cdots+a_{n-m+1}+a_{n+m}=0 \]
+  这是齐次线性递推数列，其特征方程是
+  \[ f_m(x) = 1+x+\cdots+x^{m-1}-2mx^m+x^{m+1}+\cdots+x^{2m}=0 \]
+  为了得到它的通项表示，讨论它的根的情况，因为$f_m(1)=f_m'(1)=0$，所以$x=1$是它的二重根。设它的其它复数根分别为$t_i(i=2,3,\cdots,q)$，则通项可表为
+  \[ a_n=c_0+c_1 n + \sum_{i=2}^q p_i(n)t_i^n \]
+  其中的系数$c_0,c_1$为复常数，$p_i(n)$是一些关于$n$的多项式。
+
+  要使它是等差数列，则只需要通项中那些多项式全是零多项式就行了。如果数列既是$P(r)$数列，又是$P(s)$数列，则它的通项将有两种上述表示，本文的结论便是
+  \begin{statement}
+    如果多项式$f_r(x)$与多项式$f_s(x)$除$x=1$以外没有其它相同的根，则数列是等差数列。
+  \end{statement}
+  有这结论之后，$f_2(x)$除$x=1$以外还有两个实根，而$f_3(x)$除$x=1$以外还有四个虚根，因此由这结论，便知原题结论正确。
+
+  为了证明这个命题，只需要证明如下的命题:
+\begin{statement}
+  \label{statement:p-t-0}
+    设$t_1,t_2,\cdots,t_m$是$m$个非零且互不相等的复常数，而$p_i(x)(i=1,2,\cdots,m)$一些关于$x$的多项式，如果等式$p_1(n)t_1^n+p_2(n)t_2^n+\cdots+p_m(n)t_m^n=0$对一切正整数$n$都成立，则$p_i(x)(i=1,2,\ldots,n)$全是零多项式。
+\end{statement}
+
+下面来一步步的证明它，首先容易证明
+\begin{lemma}
+  \label{lemma:ration-equation-bounded}
+  对于任意两个非零复系数多项式$p(x)$和$q(x)$，存在正整数$n$，使得当$|x|$充分大时有
+  \[ \left| \frac{p(x)}{q(x)} \right| < |x|^n \]
+\end{lemma}
+
+下面来证明命题\ref{statement:p-t-0},
+\begin{proof}[\textbf{证明}]
+  设在诸$t_i(i=1,2,\ldots,m)$中绝对值最大者为$t_m$，在原式两边同除以它的系数$p_m(n)$得
+  \[ t_m^n = q_1(n)t_1^n+q_2(n)t_2^n+\cdots+q_{m-1}t_{m-1}^n \]
+  其中
+  \[ q_i(x) = - \frac{p_i(x)}{p_m(x)} (i=1,2,\ldots,m-1) \]
+  由引理\ref{lemma:ration-equation-bounded}，存在正整数$u$，使得当$n$充分大时，
+  \[ |t_m^n|=|q_1(n)t_1^n+q_2(n)t_2^n+\cdots+q_{m-1}t_{m-1}^n| < n^u(|t_1|^n+|t_2|^n+\cdots+|t_{m-1}|^n|) \]
+  于是令$r_i=t_i/t_m$，则$|r_i| < 1$，于是
+  \[ n^u(|r_1|^n+|r_2|^n+\cdots+|r_{m-1}|^n) > 1  \]
+  而显然这是不可能对一切正整数都成立的，因为左边极限为0.
+\end{proof}
+ 
 \end{document}
 
 %%% Local Variables:
