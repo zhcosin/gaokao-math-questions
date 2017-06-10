@@ -261,20 +261,29 @@
 于是得如下逼近式(式中$r$和$s$是任意两个正整数)
 \[ T_{2r}(x) < \ln{(1+x)} < T_{2s+1}(x) \]
 取$x=\frac{1}{2^u}$，得
-\[ \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^u)^k} < \ln{\left( 1+\frac{1}{2^u} \right) < \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^u)^k}} \]
+\[ \sum_{k=1}^{2r} (-1)^{k-1} \frac{1}{k(2^u)^k} < \ln{\left( 1+\frac{1}{2^u} \right) < \sum_{k=1}^{2s+1} (-1)^{k-1} \frac{1}{k(2^u)^k}} \]
 再对$u=1,2,\ldots,n$进行累加得
-\[ \sum_{u=1}^n \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^u)^k} < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right) < \sum_{u=1}^{n} \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^u)^k}} \]
+\[ \sum_{u=1}^n \sum_{k=1}^{2r} (-1)^{k-1} \frac{1}{k(2^u)^k} < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right) < \sum_{u=1}^{n} \sum_{k=1}^{2s+1} (-1)^{k-1} \frac{1}{k(2^u)^k}} \]
 两边的二重求和交换求和顺序，得
-\[  \sum_{k=1}^{2r} \sum_{u=1}^n (-1)^k \frac{1}{k(2^k)^u} < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right) <  \sum_{k=1}^{2s+1} \sum_{u=1}^{n}(-1)^k \frac{1}{k(2^k)^u}} \]
+\[  \sum_{k=1}^{2r} \sum_{u=1}^n (-1)^{k-1} \frac{1}{k(2^k)^u} < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right) <  \sum_{k=1}^{2s+1} \sum_{u=1}^{n}(-1)^{k-1} \frac{1}{k(2^k)^u}} \]
 即
-\[ \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^k-1)} \left( 1-\frac{1}{2^{nk}} \right) < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right)} < \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^k-1)} \left( 1-\frac{1}{2^{nk}} \right)\]
+\[ \sum_{k=1}^{2r} (-1)^{k-1} \frac{1}{k(2^k-1)} \left( 1-\frac{1}{2^{nk}} \right) < \sum_{u=1}^n \ln{\left( 1+\frac{1}{2^u} \right)} < \sum_{k=1}^{2s+1} (-1)^{k-1} \frac{1}{k(2^k-1)} \left( 1-\frac{1}{2^{nk}} \right)\]
 令$n\to\infty$取极限，得
-\[ \sum_{k=1}^{2r} (-1)^k \frac{1}{k(2^k-1)} \leqslant \sum_{u=1}^{\infty} \ln{\left( 1+\frac{1}{2^u} \right)} \leqslant \sum_{k=1}^{2s+1} (-1)^k \frac{1}{k(2^k-1)} \]
+\[ \sum_{k=1}^{2r} (-1)^{k-1} \frac{1}{k(2^k-1)} \leqslant \sum_{u=1}^{\infty} \ln{\left( 1+\frac{1}{2^u} \right)} \leqslant \sum_{k=1}^{2s+1} (-1)^{k-1} \frac{1}{k(2^k-1)} \]
 而级数
-\[ \sum_{n=1}^{\infty} (-1)^n \frac{1}{n(2^n-1)} \]
+\[ \sum_{n=1}^{\infty} (-1)^{n-1} \frac{1}{n(2^n-1)} \]
 显然是收敛的，因此在前式中两侧，分别令$r \to \infty$和$s \to \infty$便得
-\[ \sum_{u=1}^{\infty} \ln{\left( 1+\frac{1}{2^u} \right)} = \sum_{k=1}^{\infty} (-1)^k \frac{1}{k(2^k-1)} \]
+\begin{statement}
+\[ \sum_{n=1}^{\infty} \ln{\left( 1+\frac{1}{2^n} \right)} = \sum_{n=1}^{\infty} (-1)^{n-1} \frac{1}{n(2^n-1)} \]
+\end{statement}
 不知这个级数的和是否有简单表示。
+
+上述结果还有另一种导出法，利用$\ln{(1+x)}$的泰勒级数展开得
+\[ \sum_{n=1}^{\infty} \ln{\left( 1+\frac{1}{2^n} \right)} = \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} (-1)^{m-1} \frac{1}{m2^{nm}} \]
+因为
+\[ \frac{1}{m2^{nm}} < \frac{1}{2^{nm}} \]
+所以前式右边的累级数是绝对收敛的，于是可以交换求和顺序，所以
+\[ \sum_{n=1}^{\infty} \ln{\left( 1+\frac{1}{2^n} \right)} =  \sum_{m=1}^{\infty} \sum_{n=1}^{\infty}(-1)^{m-1} \frac{1}{m2^{nm}} = \sum_{m=1}^{\infty} (-1)^{m-1}\frac{1}{m(2^m-1)} \]
 
 \end{document}
 
